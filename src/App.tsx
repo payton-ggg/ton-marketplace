@@ -133,7 +133,7 @@ function App() {
               <div className="h-2 bg-white/20 rounded w-2/3"></div>
             </div>
           </div>
-          <div className="absolute top-40 right-16 w-20 h-28 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl border border-blue-500/30 backdrop-blur-sm transform -rotate-6 animate-float-delayed">
+          <div className="absolute top-40 max-md:top-80 right-16 w-20 h-28 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl border border-blue-500/30 backdrop-blur-sm transform -rotate-6 animate-float-delayed">
             <div className="p-2">
               <div className="w-full h-14 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-lg mb-2">
                 <img src="/pepe.png" alt="" />
@@ -142,7 +142,7 @@ function App() {
               <div className="h-1.5 bg-white/20 rounded w-3/4"></div>
             </div>
           </div>
-          <div className="absolute top-60 left-1/4 w-16 h-22 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-2xl border border-green-500/30 backdrop-blur-sm transform rotate-45 animate-float-slow">
+          <div className="absolute top-80 left-1/4 w-16 h-22 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-2xl border border-green-500/30 backdrop-blur-sm transform rotate-45 animate-float-slow">
             <div className="p-2">
               <div className="w-full h-10 bg-gradient-to-br from-green-400 to-emerald-400 rounded-lg mb-1">
                 <img src="/cigar.jpg" alt="" />
@@ -151,7 +151,7 @@ function App() {
               <div className="h-1 bg-white/20 rounded w-1/2"></div>
             </div>
           </div>
-          <div className="absolute top-32 right-1/3 w-28 h-36 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl border border-orange-500/30 backdrop-blur-sm transform -rotate-12 animate-float-reverse">
+          <div className="absolute top-32 right-1/3 max-md:right-[18%] w-28 h-36 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl border border-orange-500/30 backdrop-blur-sm transform -rotate-12 animate-float-reverse">
             <div className="p-3">
               <div className="w-full h-20 bg-gradient-to-br from-orange-400 to-red-400 rounded-lg mb-2">
                 <img src="/ring.jpg" alt="" />
@@ -338,13 +338,12 @@ function App() {
                     className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 group cursor-pointer"
                     style={{
                       transform: `translate(-50%, -50%) translate(${x}px, ${y}px)`,
-                      animation: `orbit-${index} 20s linear infinite`,
+                      animation: `orbit-${index} 30s linear infinite`,
                     }}
                   >
                     <div
                       className="absolute w-0.5 bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent"
                       style={{
-                        height: `${radius}px`,
                         transformOrigin: "bottom center",
                         transform: `rotate(${angle + 180}deg)`,
                         bottom: "50%",
