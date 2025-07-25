@@ -33,10 +33,10 @@ function App() {
   }, []);
 
   const stats = [
-    { label: "Total Volume", value: "2.4M TON", icon: BarChart3 },
-    { label: "Active Users", value: "45K+", icon: Users },
-    { label: "NFTs Traded", value: "180K+", icon: Star },
-    { label: "Collections", value: "1.2K+", icon: Globe },
+    { label: "Total Volume", value: "- TON", icon: BarChart3 },
+    { label: "Active Users", value: "-", icon: Users },
+    { label: "NFTs Traded", value: "-", icon: Star },
+    { label: "Total gifts", value: "5.2K+", icon: Globe },
   ];
 
   const features = [
@@ -64,28 +64,6 @@ function App() {
     },
   ];
 
-  const trendingCollections = [
-    { name: "TON Punks", floor: "12.5 TON", volume: "450 TON", change: "+15%" },
-    {
-      name: "Crystal Cats",
-      floor: "8.2 TON",
-      volume: "320 TON",
-      change: "+8%",
-    },
-    {
-      name: "Space Warriors",
-      floor: "15.0 TON",
-      volume: "280 TON",
-      change: "+22%",
-    },
-    {
-      name: "Digital Dreams",
-      floor: "6.8 TON",
-      volume: "190 TON",
-      change: "+5%",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-x-hidden">
       {/* Animated Background */}
@@ -107,15 +85,7 @@ function App() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex items-center group">
-              <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-xl">T</span>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-xl blur opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
-              </div>
-              <span className="ml-3 text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                Byte
-              </span>
+              <img src="/logo1.png" alt="logo" className="w-10 rounded-xl" />
             </div>
 
             {/* Navigation */}
@@ -144,10 +114,6 @@ function App() {
                 </a>
               </nav>
               <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-2 text-gray-300">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="font-semibold">💎 $2.99</span>
-                </div>
                 <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25">
                   Connect Wallet
                 </button>
@@ -207,8 +173,7 @@ function App() {
           <div className="relative w-96 h-96">
             {/* Central Node */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center animate-pulse-slow">
-              <span className="text-white font-bold text-xl">T</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur opacity-50 animate-ping"></div>
+              <img src="/logo1.png" className="rounded-full" alt="" />
             </div>
 
             {/* Orbiting Nodes */}
@@ -269,7 +234,7 @@ function App() {
 
             {/* Interactive Holographic Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 mb-12">
-              <button className="group relative bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-500 transform hover:scale-110 hover:-translate-y-2 shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
+              <button className="group relative bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-500 transform hover:scale-110 hover:-translate-y-2 shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
                 <div className="relative flex items-center">
                   <span className="mr-3">🚀</span>
@@ -358,7 +323,7 @@ function App() {
       </section>
 
       {/* Trending Collections */}
-      <section className="py-20 bg-gray-800/20">
+      {/* <section className="py-20 bg-gray-800/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-12">
             <div>
@@ -416,129 +381,10 @@ function App() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* About TON & NFT Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              About TON & NFT
-            </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Everything you need to know to get started in the TON NFT
-              ecosystem
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-            {/* Card 1 */}
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 hover:bg-gray-800/70 transition-all duration-500 border border-gray-700/50 hover:border-gray-600/50 transform hover:-translate-y-2 group">
-              <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-3xl">📱</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-white">
-                What is Byte?
-              </h3>
-              <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                Byte is a premium NFT marketplace built on The Open Network
-                blockchain. Experience lightning-fast transactions with minimal
-                fees.
-              </p>
-              <a
-                href="#"
-                className="text-blue-400 hover:text-blue-300 text-sm font-semibold inline-flex items-center transition-colors group-hover:translate-x-1"
-              >
-                Learn More <ExternalLink className="w-4 h-4 ml-2" />
-              </a>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 hover:bg-gray-800/70 transition-all duration-500 border border-gray-700/50 hover:border-gray-600/50 transform hover:-translate-y-2 group">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-3xl">💎</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-white">
-                What is TON?
-              </h3>
-              <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                TON is a revolutionary blockchain ecosystem designed for mass
-                adoption. Fast, secure, and environmentally friendly.
-              </p>
-              <a
-                href="#"
-                className="text-blue-400 hover:text-blue-300 text-sm font-semibold inline-flex items-center transition-colors group-hover:translate-x-1"
-              >
-                Explore TON <ExternalLink className="w-4 h-4 ml-2" />
-              </a>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 hover:bg-gray-800/70 transition-all duration-500 border border-gray-700/50 hover:border-gray-600/50 transform hover:-translate-y-2 group">
-              <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-teal-500 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-3xl">🖼️</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-white">
-                What is an NFT?
-              </h3>
-              <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                Non-Fungible Tokens are unique digital assets that represent
-                ownership of digital or physical items on the blockchain.
-              </p>
-              <a
-                href="#"
-                className="text-blue-400 hover:text-blue-300 text-sm font-semibold inline-flex items-center transition-colors group-hover:translate-x-1"
-              >
-                NFT Guide <ExternalLink className="w-4 h-4 ml-2" />
-              </a>
-            </div>
-
-            {/* Card 4 */}
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 hover:bg-gray-800/70 transition-all duration-500 border border-gray-700/50 hover:border-gray-600/50 transform hover:-translate-y-2 group">
-              <div className="w-20 h-20 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-3xl">👛</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-white">
-                Crypto Wallets
-              </h3>
-              <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                Secure digital wallets to store your NFTs and Toncoin. Connect
-                seamlessly with popular TON wallets.
-              </p>
-              <a
-                href="#"
-                className="text-blue-400 hover:text-blue-300 text-sm font-semibold inline-flex items-center transition-colors group-hover:translate-x-1"
-              >
-                Setup Wallet <ExternalLink className="w-4 h-4 ml-2" />
-              </a>
-            </div>
-
-            {/* Card 5 */}
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 hover:bg-gray-800/70 transition-all duration-500 border border-gray-700/50 hover:border-gray-600/50 transform hover:-translate-y-2 group">
-              <div className="w-20 h-20 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-3xl">💰</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-white">
-                Buy Toncoin
-              </h3>
-              <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                Purchase Toncoin easily with credit cards through trusted
-                payment providers integrated into our platform.
-              </p>
-              <a
-                href="#"
-                className="text-blue-400 hover:text-blue-300 text-sm font-semibold inline-flex items-center transition-colors group-hover:translate-x-1"
-              >
-                Buy Now <ExternalLink className="w-4 h-4 ml-2" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
             Ready to Start Trading?
@@ -572,164 +418,6 @@ function App() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="border-t border-gray-800/50 bg-gray-900/50 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            {/* Brand */}
-            <div className="lg:col-span-2">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">T</span>
-                </div>
-                <span className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                  Byte
-                </span>
-              </div>
-              <p className="text-gray-400 mb-8 max-w-md leading-relaxed">
-                Welcome to the most advanced NFT marketplace on The Open
-                Network. Discover, create, and trade extraordinary digital
-                assets with the community.
-              </p>
-              <div className="flex space-x-6">
-                <a
-                  href="#"
-                  className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300 group"
-                >
-                  <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  <span>Telegram</span>
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300 group"
-                >
-                  <Twitter className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  <span>Twitter</span>
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300 group"
-                >
-                  <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  <span>GitHub</span>
-                </a>
-              </div>
-            </div>
-
-            {/* Marketplace */}
-            <div>
-              <h3 className="text-lg font-semibold mb-6 text-white">
-                Marketplace
-              </h3>
-              <ul className="space-y-4">
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors duration-300"
-                  >
-                    Explore
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors duration-300"
-                  >
-                    Collections
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors duration-300"
-                  >
-                    Create NFT
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors duration-300"
-                  >
-                    Rankings
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors duration-300"
-                  >
-                    Activity
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Support */}
-            <div>
-              <h3 className="text-lg font-semibold mb-6 text-white">Support</h3>
-              <ul className="space-y-4">
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors duration-300"
-                  >
-                    Help Center
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors duration-300"
-                  >
-                    Contact Us
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors duration-300"
-                  >
-                    Terms of Service
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors duration-300"
-                  >
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors duration-300"
-                  >
-                    Bug Bounty
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-16 pt-8 border-t border-gray-800/50 flex flex-col md:flex-row items-center justify-between">
-            <div className="flex items-center space-x-4 mb-4 md:mb-0">
-              <p className="text-gray-400 text-sm">Built on</p>
-              <div className="flex items-center space-x-2">
-                <div className="w-6 h-6 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center">
-                  <span className="text-xs font-bold text-white">💎</span>
-                </div>
-                <span className="text-white font-semibold">TON</span>
-              </div>
-            </div>
-            <div className="text-gray-400 text-sm">
-              © 2024 Byte. All rights reserved.
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
