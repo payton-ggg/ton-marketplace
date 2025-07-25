@@ -284,36 +284,173 @@ function App() {
       <AnimatedBackground />
 
       {/* Features Section */}
-      <section className="py-20 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Why Choose Byte?
-            </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+      <section className="py-20 relative overflow-hidden">
+        {/* Floating Geometric Shapes */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-10 left-10 w-32 h-32 border-2 border-purple-500/30 rotate-45 animate-spin-slow"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-20 left-1/4 w-16 h-16 border-2 border-green-500/40 transform rotate-12 animate-bounce"></div>
+          <div className="absolute top-1/3 right-1/3 w-20 h-20 bg-gradient-to-r from-pink-500/20 to-purple-500/20 transform rotate-45 animate-float"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20">
+            <div className="relative inline-block">
+              <h2 className="text-5xl md:text-7xl font-black mb-6 relative">
+                <span className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
+                  Why Choose Byte?
+                </span>
+              </h2>
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-pulse"></div>
+              <div className="absolute -bottom-4 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 animate-scale-x"></div>
+            </div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mt-8 leading-relaxed">
               Experience the next generation of NFT marketplace with
-              cutting-edge features
+              <span className="text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text font-semibold">
+                {" "}
+                mind-bending features
+              </span>
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <div key={index} className="group">
-                <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500 hover:bg-gray-800/70 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <feature.icon className="w-8 h-8 text-blue-400" />
+          <div className="relative">
+            <div className="flex justify-center mb-16">
+              <div className="relative w-24 h-24 md:w-48 md:h-48 transform rotate-45">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl md:rounded-3xl backdrop-blur-xl border border-cyan-400/30 animate-pulse-slow">
+                  <div className="absolute inset-4 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-2xl flex items-center justify-center transform -rotate-45">
+                    <img src="/logo1.png" className="rounded-3xl" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-4 text-white">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-400 leading-relaxed">
-                    {feature.description}
-                  </p>
                 </div>
+                <div className="absolute -inset-2 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-3xl blur opacity-30 animate-ping"></div>
               </div>
-            ))}
+            </div>
+
+            <div className="relative w-full h-[500px] mb-16">
+              {features.map((feature, index) => {
+                const angle = index * 90 - 45; // 90 degrees apart, starting at -45
+                const radius = 200;
+                const x = Math.cos((angle * Math.PI) / 180) * radius;
+                const y = Math.sin((angle * Math.PI) / 180) * radius;
+
+                return (
+                  <div
+                    key={index}
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 group cursor-pointer"
+                    style={{
+                      transform: `translate(-50%, -50%) translate(${x}px, ${y}px)`,
+                      animation: `orbit-${index} 20s linear infinite`,
+                    }}
+                  >
+                    <div
+                      className="absolute w-0.5 bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent"
+                      style={{
+                        height: `${radius}px`,
+                        transformOrigin: "bottom center",
+                        transform: `rotate(${angle + 180}deg)`,
+                        bottom: "50%",
+                        left: "50%",
+                        marginLeft: "-1px",
+                      }}
+                    ></div>
+
+                    <div className="relative w-64 h-80">
+                      <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-3xl blur opacity-0 group-hover:opacity-75 transition-all duration-500 animate-gradient-x"></div>
+
+                      <div className="relative bg-gray-900/90 backdrop-blur-xl rounded-3xl p-8 border border-gray-700/50 group-hover:border-cyan-400/50 transition-all duration-500 transform group-hover:scale-110 group-hover:-translate-y-4 group-hover:rotate-3 shadow-2xl group-hover:shadow-cyan-500/25">
+                        <div className="relative mb-6">
+                          <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-2xl blur animate-pulse"></div>
+                          <div className="relative w-20 h-20 bg-gradient-to-r from-gray-800 to-gray-700 rounded-2xl flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400 transition-all duration-500 transform group-hover:rotate-12 group-hover:scale-125">
+                            <feature.icon className="w-10 h-10 text-cyan-400 group-hover:text-white transition-colors duration-300" />
+                          </div>
+                        </div>
+
+                        <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-cyan-400 transition-colors duration-300 relative">
+                          {feature.title}
+                          <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-full transition-all duration-500"></div>
+                        </h3>
+
+                        <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                          {feature.description}
+                        </p>
+
+                        <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                          <div className="absolute top-4 right-4 w-2 h-2 bg-cyan-400 rounded-full animate-ping"></div>
+                          <div className="absolute bottom-6 left-6 w-1 h-1 bg-purple-400 rounded-full animate-pulse delay-300"></div>
+                          <div className="absolute top-1/2 right-6 w-1.5 h-1.5 bg-pink-400 rounded-full animate-bounce delay-500"></div>
+                        </div>
+
+                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/5 to-purple-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
+
+        {/* Additional Keyframes for Orbiting Animation */}
+        <style>{`
+          @keyframes orbit-0 {
+            from {
+              transform: translate(-50%, -50%) rotate(0deg) translateX(200px)
+                rotate(0deg);
+            }
+            to {
+              transform: translate(-50%, -50%) rotate(360deg) translateX(200px)
+                rotate(-360deg);
+            }
+          }
+          @keyframes orbit-1 {
+            from {
+              transform: translate(-50%, -50%) rotate(90deg) translateX(200px)
+                rotate(-90deg);
+            }
+            to {
+              transform: translate(-50%, -50%) rotate(450deg) translateX(200px)
+                rotate(-450deg);
+            }
+          }
+          @keyframes orbit-2 {
+            from {
+              transform: translate(-50%, -50%) rotate(180deg) translateX(200px)
+                rotate(-180deg);
+            }
+            to {
+              transform: translate(-50%, -50%) rotate(540deg) translateX(200px)
+                rotate(-540deg);
+            }
+          }
+          @keyframes orbit-3 {
+            from {
+              transform: translate(-50%, -50%) rotate(270deg) translateX(200px)
+                rotate(-270deg);
+            }
+            to {
+              transform: translate(-50%, -50%) rotate(630deg) translateX(200px)
+                rotate(-630deg);
+            }
+          }
+          .glitch-text:hover::before,
+          .glitch-text:hover::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+          .glitch-text:hover::before {
+            animation: glitch-anim-1 0.3s infinite linear alternate-reverse;
+            color: #ff00ff;
+            z-index: -1;
+          }
+          .glitch-text:hover::after {
+            animation: glitch-anim-2 0.3s infinite linear alternate-reverse;
+            color: #00ffff;
+            z-index: -2;
+          }
+        `}</style>
       </section>
 
       {/* Trending Collections */}
