@@ -384,7 +384,7 @@ function App() {
       </section> */}
 
       {/* CTA Section */}
-      <section className="py-20 relative">
+      <section className="py-10 mt-10 relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
             Ready to Start Trading?
