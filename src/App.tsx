@@ -327,7 +327,7 @@ function App() {
       </section>
 
       {/* Custom Styles for Animations */}
-      <style>{`
+      <style jsx>{`
         @keyframes float {
           0%,
           100% {
