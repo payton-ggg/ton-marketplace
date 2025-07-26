@@ -221,8 +221,8 @@ function App() {
                 className="text-xl md:text-2xl text-gray-300 mb-4 max-w-4xl mx-auto leading-relaxed glitch-text"
                 data-text="Experience the most advanced NFT marketplace on TON blockchain. Trade, collect, and create with zero compromises."
               >
-                Experience the most advanced NFT marketplace on TON blockchain.
-                Trade, collect, and create with zero compromises.
+                Experience the most advanced gifts marketplace on TON
+                blockchain. Trade, collect, and create with zero compromises.
               </p>
             </div>
 
@@ -327,7 +327,7 @@ function App() {
 
             <div className="relative w-full h-[500px] mb-16">
               {features.map((feature, index) => {
-                const angle = index * 90 - 45; // 90 degrees apart, starting at -45
+                const angle = index * 90 - 45;
                 const radius = 200;
                 const x = Math.cos((angle * Math.PI) / 180) * radius;
                 const y = Math.sin((angle * Math.PI) / 180) * radius;
