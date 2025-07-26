@@ -232,7 +232,7 @@ function App() {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
                 <div className="relative flex items-center">
                   <span className="mr-3">🚀</span>
-                  Launch Explorer
+                  Open Web-App
                   <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
                 </div>
                 <div className="absolute inset-0 border-2 border-transparent bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-border-glow"></div>
