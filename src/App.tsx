@@ -36,7 +36,7 @@ function App() {
   const features = [
     {
       icon: Zap,
-      title: "Lightning Fast",
+      title: "Fast as Lightning",
       description:
         "Built on TON blockchain for instant transactions and minimal fees",
     },
