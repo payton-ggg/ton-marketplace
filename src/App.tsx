@@ -36,7 +36,7 @@ function App() {
   const features = [
     {
       icon: Zap,
-      title: "Fast as\nLightning",
+      title: "Fast as <br> Lightning",
       description:
         "Built on TON blockchain for instant transactions and minimal fees",
     },
@@ -364,7 +364,15 @@ function App() {
                         </div>
 
                         <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-cyan-400 transition-colors duration-300 relative">
-                          {feature.title}
+                          {feature.title.includes("<br>") ? (
+                            <span
+                              dangerouslySetInnerHTML={{
+                                __html: feature.title,
+                              }}
+                            />
+                          ) : (
+                            feature.title
+                          )}
                           <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-full transition-all duration-500"></div>
                         </h3>
 
